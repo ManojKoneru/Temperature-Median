@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+
+<head>
+  <link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+  <script data-require="angular.js@*" data-semver="2.0.0" src="https://code.angularjs.org/2.0.0-beta.6/angular2.min.js"></script>
+  <script data-require="jquery@*" data-semver="2.2.0" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+
+  <script src="//code.angularjs.org/1.3.0-rc.2/angular.min.js"></script>
+  <script src="//code.angularjs.org/1.3.0-rc.2/angular-route.min.js"></script>
+  <script src="//code.angularjs.org/1.3.0-rc.2/angular-resource.min.js"></script>
+  <script src="app.js"></script>
+
+  <style>
+    #btn {
+      float: left;
+    }
+    
+    #median {
+      margin-left: 120px;
+      width: 300px;
+    }
+    
+    #median p {
+      line-height: 30px;
+      font-size: 20px;
+    }
+  </style>
+
+</head>
+
+
+<body ng-controller="mainController">
+
+  <div class="container">
+    <h1>Temperature Monitor</h1>
+
+    <label for="temperature">Add Temperture:</label>
+    <input name="temperature" id="temperature" ng-model="newTemperature" />
+    <button class="btn btn-success" ng-click=recordTemperature(newTemperature)>Add</button>
+    <hr>
+    <button id='btn' class="btn btn-primary" ng-click=getCurrentMedian()>Get Median Temperture</button>
+
+    <div id='median'>
+      <p>Current Median:{{median}}</p>
+    </div>
+  </div>
+  <hr>
+  <hr>
+  <p>developer name: Manoj Koneru</p>
+  <hr>
+  <a href="jasmine-test-runner.html">Run Unit Tests</a>
+</body>
+
+</html>
